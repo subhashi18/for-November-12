@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Name confirmation screen -->
+  <main id="loginScreen" class="screen login-screen">
+    <section class="login-card">
+      <img src="photo.jpg" alt="My photo" class="side-photo">
+      
+      
+      <p class="eyebrow">A little surprise is waiting...</p>
+      <h1>Before you enter</h1>
+      <p class="intro">Please confirm your name to unlock </p>
+
+      <form id="nameForm">
+        <label for="nameInput">Enter your name</label>
+        <input id="nameInput" type="text" placeholder="Your name" autocomplete="name" required>
+        <button type="submit">Confirm &amp; Login</button>
+      </form>
+      <p class="hint">This surprise is just for you 🤍</p>
+    </section>
+  </main>
+
+  <!-- Gift screen, shown only after the correct name -->
+  <main id="giftScreen" class="screen gift-screen hidden">
+    <section class="gift-card">
+      <p class="eyebrow">You made it!</p>
+      <h1>A special gift for you, Nithija 💙</h1>
+      <p class="intro">Tap the gift to open it.</p>
+
+      <button id="giftButton" class="gift-button" type="button" aria-label="Open the gift box">
+        <span class="gift-bow">🎀</span>
+        <span class="gift-lid"></span>
+        <span class="gift-box"><span class="gift-ribbon"></span></span>
+      </button>
+      <p class="tap-hint">Click the gift box 🎁</p>
+    </section>
+  </main>
+
+  <!-- Birthday reveal -->
+  <main id="birthdayScreen" class="screen birthday-screen hidden">
+    <section class="birthday-card">
+      <p class="eyebrow">A wish made just for you</p>
+      <h1>Happy Birthday, Nithija 🎉</h1>
+      <p class="wish">
+        May your life always be filled with happiness, love, good health
+        and beautiful memories. Keep smiling and never stop chasing your dreams.
+        You deserve all the wonderful things in the world. Love U, my sweet boy 💙
+      </p>
+
+      <div class="cake" aria-label="Blue and gold birthday cake">
+        <div class="candles"><i></i><i></i><i></i></div>
+        <div class="cake-top"></div>
+        <div class="cake-middle"><span class="gold-drip"></span></div>
+        <div class="cake-bottom"><span class="gold-band"></span></div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <div class="video-wrap">
+        <video controls playsinline preload="metadata">
+          <source src="birthday.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+       
+      </div>
+
+      <button id="logoutButton" class="secondary-button" type="button">Log out</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

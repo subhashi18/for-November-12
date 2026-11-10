@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #8fc9ed;
+  --deep-blue: #276b9b;
+  --gold: #d6ad4e;
+  --ink: #29445a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+}
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 1. White login page with one large white lily */
+.login-screen {
+  background: #fff;
+}
+
+.login-card {
+  width: min(100%, 480px);
+  text-align: center;
+  padding: 30px 28px 34px;
+}
+
+.lily {
+  position: relative;
+  width: 230px;
+  height: 205px;
+  margin: 0 auto 10px;
+}
+
+.petal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70px;
+  height: 130px;
+  margin-left: -35px;
+  margin-top: -105px;
+  border-radius: 80% 80% 45% 45%;
+  transform-origin: 50% 100%;
+  background: linear-gradient(90deg, #f5f4ef, #fff 48%, #e8e7df);
+  border: 1px solid #e8e6df;
+  box-shadow: 0 3px 12px #0000000b;
+}
+
+.p1 { transform: rotate(0deg); }
+.p2 { transform: rotate(60deg); }
+.p3 { transform: rotate(120deg); }
+.p4 { transform: rotate(180deg); }
+.p5 { transform: rotate(240deg); }
+.p6 { transform: rotate(300deg); }
+
+.flower-center {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #d7b45c 0 25%, #a47d2f 28% 45%, transparent 48%);
+}
+
+.eyebrow {
+  color: #8c9eaa;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(27px, 5vw, 38px);
+}
+
+.intro {
+  color: #71818d;
+  line-height: 1.6;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+  margin: 28px auto 0;
+  max-width: 340px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d9e0e5;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #9ebdce;
+  box-shadow: 0 0 0 3px #9ebdce33;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 14px 24px;
+  background: #527f9d;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.hint, .tap-hint {
+  color: #9aa7af;
+  font-size: 13px;
+  margin-top: 22px;
+}
+
+/* 2. Gift page */
+.gift-screen {
+  background: linear-gradient(145deg, #f4faff, #dcefff);
+  text-align: center;
+}
+
+.gift-card {
+  width: min(100%, 550px);
+  padding: 35px 22px;
+}
+
+.gift-button {
+  position: relative;
+  display: block;
+  width: 190px;
+  height: 170px;
+  margin: 45px auto 10px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.gift-button:hover {
+  filter: none;
+  transform: translateY(-5px);
+}
+
+.gift-box {
+  position: absolute;
+  width: 145px;
+  height: 100px;
+  left: 22px;
+  bottom: 5px;
+  background: #4c91c3;
+  border: 3px solid #3479ad;
+  border-radius: 7px;
+  box-shadow: 0 12px 18px #356d9630;
+}
+
+.gift-ribbon {
+  position: absolute;
+  width: 25px;
+  height: 100%;
+  left: 57px;
+  background: var(--gold);
+}
+
+.gift-lid {
+  position: absolute;
+  z-index: 2;
+  width: 165px;
+  height: 35px;
+  left: 12px;
+  bottom: 100px;
+  border-radius: 7px;
+  background: #75b5df;
+  border: 3px solid #3479ad;
+  transition: transform .7s ease;
+}
+
+.gift-bow {
+  position: absolute;
+  z-index: 3;
+  left: 70px;
+  top: 0;
+  font-size: 48px;
+  transition: transform .7s ease;
+}
+
+.gift-button.open .gift-lid {
+  transform: translate(38px, -48px) rotate(18deg);
+}
+
+.gift-button.open .gift-bow {
+  transform: translate(45px, -48px) rotate(25deg);
+}
+
+/* 3. Birthday reveal page */
+.birthday-screen {
+  background: linear-gradient(145deg, #eaf7ff, #cce8fb);
+}
+
+.birthday-card {
+  width: min(100%, 650px);
+  padding: 35px 24px;
+  text-align: center;
+  background: #ffffffd9;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  box-shadow: 0 18px 50px #386b8b20;
+}
+
+.birthday-card h1 {
+  color: #286e9f;
+}
+
+.wish {
+  max-width: 520px;
+  margin: 12px auto;
+  color: #5e7485;
+  line-height: 1.8;
+}
+
+/* Cake made with CSS: blue icing and gold decoration */
+.cake {
+  position: relative;
+  width: 230px;
+  height: 205px;
+  margin: 25px auto 30px;
+}
+
+.cake-bottom, .cake-middle, .cake-top {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #397eaa;
+  background: #6faed5;
+  box-shadow: inset 0 -8px 0 #4b91bf;
+}
+
+.cake-bottom {
+  bottom: 22px;
+  width: 210px;
+  height: 65px;
+  border-radius: 12px 12px 17px 17px;
+}
+
+.cake-middle {
+  bottom: 82px;
+  width: 175px;
+  height: 55px;
+  border-radius: 12px 12px 10px 10px;
+  background: #8bc4e5;
+}
+
+.cake-top {
+  bottom: 132px;
+  width: 140px;
+  height: 25px;
+  border-radius: 50%;
+  background: #b6ddf2;
+}
+
+.gold-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 13px;
+  height: 9px;
+  background: var(--gold);
+}
+
+.gold-drip {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -2px;
+  height: 9px;
+  border-radius: 0 0 10px 10px;
+  background: var(--gold);
+}
+
+.cake-plate {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 230px;
+  height: 15px;
+  border-radius: 50%;
+  background: #d7b65f;
+}
+
+.candles {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 155px;
+  display: flex;
+  gap: 18px;
+  transform: translateX(-50%);
+}
+
+.candles i {
+  position: relative;
+  width: 8px;
+  height: 35px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(135deg, #fff 0 5px, #d6ad4e 5px 9px);
+}
+
+.candles i::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 15px;
+  left: -1px;
+  top: -17px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #ffc85a;
+  box-shadow: 0 0 13px #ffc85a99;
+}
+
+.video-wrap {
+  max-width: 500px;
+  margin: 25px auto;
+}
+
+.video-wrap h2 {
+  color: #347ba9;
+  font-size: 20px;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  margin-top: 12px;
+  border-radius: 14px;
+  background: #d7e9f5;
+}
+
+.video-note {
+  color: #8294a1;
+  font-size: 12px;
+}
+
+.secondary-button {
+  background: #7895a9;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .login-card, .gift-card, .birthday-card {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+.side-photo {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.login-screen {
+    position: relative;
+}
+
+.side-photo {
+    position: absolute;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.35;
+}
+
+.login-card {
+    position: relative;
+    z-index: 1;
+}
+
+.login-screen {
+    position: relative;
+    overflow: hidden;
+}
+
+.side-photo {
+    position: absolute;
+    width: 700px;
+    height: 100%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.25;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 480px);
+    text-align: center;
+    padding: 30px 28px 34px;
+}
+
+.login-card form,
+.login-card input,
+.login-card button {
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+}
